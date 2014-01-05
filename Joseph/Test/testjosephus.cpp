@@ -14,24 +14,27 @@
 using namespace std;
 
 static void testNewRemoveRing();
-static void testNextCurrent ();
-void testJosephus(){
+static void testNextCurrent();
+static void testSize();
+
+void testJosephus() {
 	cout << "Testing start...\n";
 
 	testNewRemoveRing();
 	testNextCurrent();
+	testSize();
 
 	cout << "All tests passed! Yeahhhh\n";
 }
 
-static void testNewRemoveRing(){
+static void testNewRemoveRing() {
 	cout << "	Testing new delete function\n";
 	Ring ring = newRing(10);
 	assert(ring != NULL);
 	deleteRing(ring);
 }
 
-static void testNextCurrent (){
+static void testNextCurrent() {
 	cout << "	Testing next function\n";
 	Ring ring = newRing(9);
 	//if is next step corret for first sep from init
@@ -46,6 +49,24 @@ static void testNextCurrent (){
 	//try for last one node if is good
 	next(ring, 3);
 	assert(current(ring) == 2);
+	//
+	next(ring, 1);
+	assert(current(ring) == 2);
 
 	deleteRing(ring);
+}
+static void testSize() {
+	Ring ring = newRing(1);
+	assert(size(ring) == 1);
+	deleteRing(ring);
+	ring = newRing(2);
+	assert(size(ring) == 2);
+	deleteRing(ring);
+	ring = newRing(3);
+	assert(size(ring) == 3);
+	deleteRing(ring);
+	ring = newRing(100);
+	assert(size(ring) == 100);
+	deleteRing(ring);
+
 }
