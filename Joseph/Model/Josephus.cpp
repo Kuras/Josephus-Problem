@@ -31,6 +31,7 @@ Ring newRing (int numChild){
 
 static void setUpRing (Ring ring, int ammount){
 	nodePtr current = (node *)malloc(sizeof(node));
+	assert(current != NULL);
 	ring->list = current;
 	current->name = 1;
 	current->next = current;
@@ -38,6 +39,7 @@ static void setUpRing (Ring ring, int ammount){
 	int name = 2;
 	while (name <= ammount) {
 		nodePtr temp = (node *)malloc(sizeof(node));
+		assert(temp != NULL);
 		current->next = temp;
 		temp->name = name;
 		temp->next = ring->list;
@@ -48,3 +50,10 @@ static void setUpRing (Ring ring, int ammount){
 
 }
 
+void deleteRing (Ring ring){
+	assert(ring != NULL);
+	free(ring);
+	assert(ring != NULL);
+	ring = NULL;
+	assert(ring == NULL);
+}

@@ -13,17 +13,27 @@
 
 using namespace std;
 
-static void testNewRing();
+static void testNewRemoveRing();
+static void testNext ();
 void testJosephus(){
 	cout << "Testing start...\n";
 
-	testNewRing();
+	testNewRemoveRing();
+	testNext();
 
 	cout << "All tests passed! Yeahhhh\n";
 }
 
-static void testNewRing(){
+static void testNewRemoveRing(){
+	cout << "	Testing new delete function";
 	Ring ring = newRing(10);
 	assert(ring != NULL);
+	deleteRing(ring);
+}
 
+static void testNext (){
+	cout << "	Testing next function";
+	Ring ring = newRing(41);
+
+	deleteRing(ring);
 }

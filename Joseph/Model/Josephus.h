@@ -17,13 +17,15 @@ typedef struct ring *Ring;
 Ring newRing (int numChild);
 
 //free memory witch are used to allocate new ring
+//old pointer ring has null value
 void deleteRing (Ring ring);
 
 //returns size of Ring
 int size (Ring ring);
 
 //sets up current pointer on next child
-void next (Ring ring);
+//step got to be possitive
+void next (Ring ring, int step);
 
 //returns childe on which points current pointer
 child current (Ring ring);
