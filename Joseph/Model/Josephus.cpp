@@ -81,7 +81,25 @@ int size (Ring ring){
 	nodePtr current = ring->list;
 	while (current->next != ring->list){
 		sizeRing++;
+		current = current->next;
 	}
 
 	return sizeRing;
+}
+void remove (Ring ring){
+	assert(size(ring) > 0);
+	if (size(ring) == 1){
+		free(ring->list);
+		ring->list = NULL;
+	}else{
+		nodePtr current = ring->list;
+		next(ring,size(ring));
+		nodePtr previous = ring->list;
+		ring->list = current->next;
+
+		previous->next = ring->list;
+		current->next = NULL;
+		free(current);
+		current = NULL;
+	}
 }

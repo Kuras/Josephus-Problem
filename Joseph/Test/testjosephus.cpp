@@ -16,13 +16,14 @@ using namespace std;
 static void testNewRemoveRing();
 static void testNextCurrent();
 static void testSize();
-
+static void testRemove();
 void testJosephus() {
 	cout << "Testing start...\n";
 
 	testNewRemoveRing();
 	testNextCurrent();
 	testSize();
+	testRemove();
 
 	cout << "All tests passed! Yeahhhh\n";
 }
@@ -56,6 +57,7 @@ static void testNextCurrent() {
 	deleteRing(ring);
 }
 static void testSize() {
+	cout << "	Testing size function\n";
 	Ring ring = newRing(1);
 	assert(size(ring) == 1);
 	deleteRing(ring);
@@ -69,4 +71,25 @@ static void testSize() {
 	assert(size(ring) == 100);
 	deleteRing(ring);
 
+}
+
+static void testRemove() {
+	cout << "	Testing remove function\n";
+	Ring ring = newRing(9);
+	remove(ring);
+	assert(current(ring) == 2);
+	remove(ring);
+	assert(current(ring) == 3);
+	remove(ring);
+	assert(current(ring) == 4);
+	remove(ring);
+	assert(current(ring) == 5);
+	remove(ring);
+	assert(current(ring) == 6);
+	remove(ring);
+	assert(current(ring) == 7);
+	remove(ring);
+	assert(current(ring) == 8);
+	remove(ring);
+	assert(current(ring) == 9);
 }

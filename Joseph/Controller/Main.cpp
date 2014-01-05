@@ -10,26 +10,26 @@
 #include<cstdlib>
 using namespace std;
 
-/*
+
 void solve (Ring ring);
 void showAnswer (Ring ring);
-*/
+
 
 using namespace std;
 int main (void){
 
-	testJosephus();
+//	testJosephus();
 
-	//Ring ring = newRing(41,3);
-	//solve(ring);
-	//showAnswer(ring);
+	Ring ring = newRing(6);
+	solve(ring);
+	showAnswer(ring);
 
 	return EXIT_SUCCESS;
 }
-/*
+
 void solve(Ring ring){
-	if (size(ring) > 1){
-		next(ring);
+	if (size(ring) > 3){
+		next(ring,3);
 		remove(ring);
 			solve(ring);
 	}
@@ -42,4 +42,4 @@ void showAnswer (Ring ring){
 
 
 
-*/
+

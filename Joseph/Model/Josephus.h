@@ -20,7 +20,7 @@ Ring newRing (int numChild);
 //old pointer ring has null value
 void deleteRing (Ring ring);
 
-//returns size of Ring
+//returns size of Ring*
 int size (Ring ring);
 
 //sets up current pointer on next child*
@@ -30,7 +30,7 @@ void next (Ring ring, int step);
 //returns childe on which points current pointer*
 child current (Ring ring);
 
-//remove child from ring
+//remove child from ring*
 void remove (Ring ring);
 
 #endif /* JOSEPHUS_H_ */
