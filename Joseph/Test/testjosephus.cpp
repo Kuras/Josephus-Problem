@@ -8,7 +8,8 @@
 #include "testjosephus.h"
 #include "../Model/Josephus.h"
 #include <iostream>
-#include <assert.h>
+#include <cstdlib>
+#include <cassert>
 
 using namespace std;
 
@@ -23,6 +24,6 @@ void testJosephus(){
 
 static void testNewRing(){
 	Ring ring = newRing(10);
-	assert(ring != nullptr);
+	assert(ring != NULL);
 
 }

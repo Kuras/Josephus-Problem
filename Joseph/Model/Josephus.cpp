@@ -7,7 +7,8 @@
 
 
 #include "Josephus.h"
-#include <assert.h>
+#include <cassert>
+#include <cstdlib>
 
 typedef struct node *nodePtr;
 struct node{
@@ -16,37 +17,34 @@ struct node{
 };
 
 struct ring{
-	nodePtr current;
 	nodePtr list;
 };
-static void setUpRing (Ring ring);
+static void setUpRing (Ring ring,int numChild);
 
 Ring newRing (int numChild){
 	assert(numChild > 0);
-	assert(step > 0);
-	Ring ring = (struct ring *)malloc(size(struct ring));
-	assert(ring != NULL);
-     setUpRing (ring, numChild);
-	return ring;
+	Ring listNode = (ring *)malloc(sizeof(ring));
+	assert(listNode != NULL);
+     setUpRing (listNode, numChild);
+	return listNode;
 }
+
 static void setUpRing (Ring ring, int ammount){
-	ring->current = malloc(sizeof(struct node));
-	ring->list = ring->current;
-	ring->current->name = 1;
-	ring->current->next = ring->current;
+	nodePtr current = (node *)malloc(sizeof(node));
+	ring->list = current;
+	current->name = 1;
+	current->next = current;
 
 	int name = 2;
 	while (name <= ammount) {
-		nodePtr temp = malloc(sizeof(struct node));
-		ring->current->next = temp;
+		nodePtr temp = (node *)malloc(sizeof(node));
+		current->next = temp;
 		temp->name = name;
 		temp->next = ring->list;
 
-		ring->current = temp;
+		current = temp;
 		name++;
 	}
-
-	ring->current = ring->list;
 
 }
 
