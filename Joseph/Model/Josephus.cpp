@@ -30,6 +30,7 @@ Ring newRing (int numChild){
 }
 
 static void setUpRing (Ring ring, int ammount){
+	assert(ammount > 0);
 	nodePtr current = (node *)malloc(sizeof(node));
 	assert(current != NULL);
 	ring->list = current;
@@ -73,4 +74,14 @@ child current (Ring ring){
 	childName = ring->list->name;
 	assert(childName > 0);
 	return childName;
+}
+
+int size (Ring ring){
+	int sizeRing = 1;
+	nodePtr current = ring->list;
+	while (current->next != ring->list){
+		sizeRing++;
+	}
+
+	return sizeRing;
 }
