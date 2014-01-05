@@ -65,5 +65,12 @@ void next (Ring ring, int step){
 		ring->list = ring->list->next;
 		location++;
 	}
-	assert(location == (step + 1));
+	assert(location == step);
+}
+
+child current (Ring ring){
+	child childName;
+	childName = ring->list->name;
+	assert(childName > 0);
+	return childName;
 }
