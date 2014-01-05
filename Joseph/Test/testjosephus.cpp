@@ -33,7 +33,17 @@ static void testNewRemoveRing(){
 
 static void testNext (){
 	cout << "	Testing next function";
-	Ring ring = newRing(41);
+	Ring ring = newRing(9);
+	//if is next step corret for first sep from init
+	next(ring, 3);
+	assert(current(ring) == 3);
+	next(ring, 3);
+	assert(current(ring) == 6);
+	next(ring, 3);
+	assert(current(ring) == 9);
+	//try for last one node if is good
+	next(ring, 3);
+	assert(current(ring) == 2);
 
 	deleteRing(ring);
 }

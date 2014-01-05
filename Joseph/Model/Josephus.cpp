@@ -57,3 +57,13 @@ void deleteRing (Ring ring){
 	ring = NULL;
 	assert(ring == NULL);
 }
+
+void next (Ring ring, int step){
+	assert(step > 0);
+	int location = 1;
+	while (location < step){
+		ring->list = ring->list->next;
+		location++;
+	}
+	assert(location == (step + 1));
+}
