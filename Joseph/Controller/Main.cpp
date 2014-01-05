@@ -28,7 +28,8 @@ int main (void){
 }
 
 void solve(Ring ring){
-	if (size(ring) > 3){
+	if (size(ring) > 1){
+		cout << current(ring);
 		next(ring,3);
 		remove(ring);
 			solve(ring);
