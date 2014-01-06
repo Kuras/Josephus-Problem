@@ -23,9 +23,9 @@ int main (void){
 
 	testJosephus();
 
-//	Ring ring = newRing(countOfMembers);
-//	solve(ring);
-//	showAnswer(ring);
+	Ring ring = newRing(countOfMembers);
+	solve(ring);
+	showAnswer(ring);
 
 	return EXIT_SUCCESS;
 }

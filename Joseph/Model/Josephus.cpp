@@ -17,6 +17,7 @@ struct node{
 };
 
 struct ring{
+	int size;
 	nodePtr list;
 };
 static void setUpRing (Ring ring,int numChild);
@@ -25,6 +26,7 @@ Ring newRing (int numChild){
 	assert(numChild > 0);
 	Ring listNode = (ring *)malloc(sizeof(ring));
 	assert(listNode != NULL);
+	 listNode->size = numChild;
      setUpRing (listNode, numChild);
 	return listNode;
 }
@@ -77,7 +79,7 @@ child current (Ring ring){
 }
 
 int size (Ring ring){
-	int sizeRing = 1;
+/*	int sizeRing = 1;
 	nodePtr current = ring->list;
 	while (current->next != ring->list){
 		sizeRing++;
@@ -85,6 +87,8 @@ int size (Ring ring){
 	}
 
 	return sizeRing;
+*/
+	return ring->size;
 }
 void remove (Ring ring){
 	assert(size(ring) > 0);
@@ -102,4 +106,6 @@ void remove (Ring ring){
 		free(current);
 		current = NULL;
 	}
+	ring->size--;
+	assert(size(ring) >= 0);
 }
