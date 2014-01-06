@@ -14,13 +14,16 @@ using namespace std;
 void solve (Ring ring);
 void showAnswer (Ring ring);
 
-
 using namespace std;
+
+int step = 3;
+int countOfMembers = 41;
+
 int main (void){
 
 //	testJosephus();
 
-	Ring ring = newRing(6);
+	Ring ring = newRing(countOfMembers);
 	solve(ring);
 	showAnswer(ring);
 
@@ -28,9 +31,8 @@ int main (void){
 }
 
 void solve(Ring ring){
-	if (size(ring) > 1){
-		cout << current(ring);
-		next(ring,3);
+	if (size(ring) > THE_LAST_MAN){
+		next(ring,step);
 		remove(ring);
 			solve(ring);
 	}
@@ -38,7 +40,7 @@ void solve(Ring ring){
 
 void showAnswer (Ring ring){
 	child children = current(ring);
-	cout << children << "\n";
+	cout << "This is Josephus: " << children << "\n";
 }
 
 

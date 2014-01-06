@@ -7,6 +7,7 @@
 
 #ifndef JOSEPHUS_H_
 #define JOSEPHUS_H_
+#define THE_LAST_MAN 1
 
 typedef int child;
 typedef struct ring *Ring;
