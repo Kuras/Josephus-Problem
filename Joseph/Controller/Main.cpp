@@ -21,11 +21,11 @@ int countOfMembers = 41;
 
 int main (void){
 
-//	testJosephus();
+	testJosephus();
 
-	Ring ring = newRing(countOfMembers);
-	solve(ring);
-	showAnswer(ring);
+//	Ring ring = newRing(countOfMembers);
+//	solve(ring);
+//	showAnswer(ring);
 
 	return EXIT_SUCCESS;
 }

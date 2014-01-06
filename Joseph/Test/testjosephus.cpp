@@ -53,6 +53,9 @@ static void testNextCurrent() {
 	//
 	next(ring, 1);
 	assert(current(ring) == 2);
+	//all cycle
+	next(ring,9);
+	assert(current(ring) == 1);
 
 	deleteRing(ring);
 }
@@ -92,4 +95,5 @@ static void testRemove() {
 	assert(current(ring) == 8);
 	remove(ring);
 	assert(current(ring) == 9);
+	remove(ring);
 }
