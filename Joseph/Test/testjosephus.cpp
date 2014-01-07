@@ -17,11 +17,11 @@ static void testNewRemoveRing();
 static void testNextCurrent();
 static void testSize();
 static void testRemove();
-static void testLickMemo();
+//static void testLickMemo();
 void testJosephus() {
 	cout << "Testing start...\n";
 
-	testLickMemo();
+//	testLickMemo();
 	testNewRemoveRing();
 	testNextCurrent();
 	testSize();
@@ -99,7 +99,7 @@ static void testRemove() {
 	assert(current(ring) == 9);
 	remove(ring);
 }
-
+/*
 static void testLickMemo(){
 	int i = 0;
 	while (i < 1000){
@@ -108,3 +108,4 @@ static void testLickMemo(){
 		i++;
 	}
 }
+*/
